@@ -7,3 +7,19 @@
 body{
     background-color: #2b2b2b;
 }
+
+a{
+    text-decoration: none;
+}
+
+button {
+    padding: .3rem 1rem;
+    border: none;
+    background-color: #0077ff;
+    border-radius: 8px;
+    margin: 1rem auto;
+}
+
+a{
+    color: white;
+}

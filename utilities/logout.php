@@ -1,14 +1,9 @@
 <?php 
 
-@require_once __DIR__ . '/functions.php';
 
 session_start();
 
 session_unset();
-
-sleep(3);
-
-
 
 ?>
 
@@ -26,7 +21,10 @@ sleep(3);
 <body>
     <main>
         <h1>LOGOUT</h1>
-        <h5>Sarai ritrasmesso alla home a breve</h5>
+        <h5>Torna alla pagina principale</h5>
+        <button>
+            <a href="../index.php">Home</a>
+        </button>
     </main>
 </body>
 </html>

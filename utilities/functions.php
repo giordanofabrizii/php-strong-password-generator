@@ -18,9 +18,4 @@ function allowLogin($name, $pass, $array) {
     // non esiste questo user
     return null;
 };
-
-function redirect(){
-    header('location: ../index.php');
-}
-
 ?>
