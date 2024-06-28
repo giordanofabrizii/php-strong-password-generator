@@ -19,4 +19,8 @@ function allowLogin($name, $pass, $array) {
     return null;
 };
 
+function redirect(){
+    header('location: ../index.php');
+}
+
 ?>
