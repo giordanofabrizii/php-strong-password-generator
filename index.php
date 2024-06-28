@@ -3,7 +3,6 @@
 require_once __DIR__ . '/utilities/db.php';
 
 session_start();
-var_dump($_SESSION);
 
 /**
  * 
@@ -33,27 +32,49 @@ var_dump($_SESSION);
 <body>
     <header>
         <nav>
-            <ul>
-                <li>
-                    <a href="./utilities/login.php">Login</a>
-                </li>
-                <li>
-                    <a href="./utilities/logout.php">Logout</a>
-                </li>
-            </ul>
+            <button>
+                <?php if (isset($_SESSION['username'])) { 
+                    echo '<a href="./utilities/logout.php">Logout</a>';
+                } else {
+                    echo '<a href="./utilities/login.php">Login</a>';
+                }
+                ?>
+            </button>
+
         </nav>
     </header>
     <main>
-        <h1>Fai pure l'accesso</h1>
-        <h3>Devi andare alla pagina di login</h3>
-
-        <?php
-            if (isset($_SESSION['username'])) {
-                echo ($_SESSION['username']);
-            } else {
-                echo "Non sei loggato.";
+        <?php // ! Controllo del login
+            if (!isset($_SESSION['username'])) {
+                // # unable to login
+                echo '<h1>Fai pure l\'accesso</h1>';
+                echo '<h3>Devi andare alla pagina di login</h3>';
             }
         ?>
+
+        <?php if (isset($_SESSION['username'])) { ?>
+            <h1>Benvenut* <?php echo $_SESSION['username'] ?> </h1>
+
+            <section>
+                <h3>Questi sono i tuoi contenuti</h3>
+                <article>
+                    <img src="https://emoji.slack-edge.com/T91QPE3BP/rick-tamarro/401d02cc2c4ce103.gif" alt="Riccardo swag">
+                </article>
+                <article>
+                    <img src="https://emoji.slack-edge.com/T91QPE3BP/rick-tamarro/401d02cc2c4ce103.gif" alt="Riccardo swag">
+                </article>
+                <article>
+                    <img src="https://emoji.slack-edge.com/T91QPE3BP/rick-tamarro/401d02cc2c4ce103.gif" alt="Riccardo swag">
+                </article>
+                <article>
+                    <img src="https://emoji.slack-edge.com/T91QPE3BP/rick-tamarro/401d02cc2c4ce103.gif" alt="Riccardo swag">
+                </article>
+                <article>
+                    <img src="https://emoji.slack-edge.com/T91QPE3BP/rick-tamarro/401d02cc2c4ce103.gif" alt="Riccardo swag">
+                </article>
+
+            </section>
+        <?php } ?>
     </main>
 </body>
 </html>

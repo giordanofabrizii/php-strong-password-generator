@@ -1,20 +1,20 @@
 <?php 
+    require_once __DIR__ . '/functions.php';
 
-require_once __DIR__ . '/functions.php';
+    session_start();
 
-session_start();
+    // Save the datas
+    if (isset($_POST['username']) && isset($_POST['password'])) {
+        
+        // < Check if the user exist
+        $logged = allowLogin($_POST['username'], $_POST['password'], $users); 
+        //  # if true => logged, if false => wrong pass, if null => don't exist
 
-// Save the datas
-if (isset($_POST['username']) && isset($_POST['password'])) {
-    $_SESSION['username'] = $_POST['username'];
-    $_SESSION['password'] = $_POST['password'];
-    
-    // Check if the user exist
-    $logged = allowLogin($_SESSION['username'], $_SESSION['password'], $users); 
-    //  # if true => logged, if false => wrong pass, if null => don't exist
-}
-
-
+        if ($logged === true) {
+            $_SESSION['username'] = $_POST['username'];
+            $_SESSION['password'] = $_POST['password'];
+        };
+    }
 ?>
 
 <!DOCTYPE html>
@@ -40,8 +40,7 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
         } else if ($logged === null) {
             echo '<h3>L\'username non esiste</h3>';
         };
-    }
-    ?>
+    } ?>
         
 </body>
 </html>
