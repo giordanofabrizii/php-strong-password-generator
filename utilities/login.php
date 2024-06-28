@@ -1,14 +1,19 @@
 <?php 
 
+require_once __DIR__ . '/functions.php';
+
 session_start();
 
-if (isset($__POST['username'])) {
+// Save the datas
+if (isset($_POST['username']) && isset($_POST['password'])) {
     $_SESSION['username'] = $_POST['username'];
+    $_SESSION['password'] = $_POST['password'];
+    
+    // Check if the user exist
+    $logged = allowLogin($_SESSION['username'], $_SESSION['password'], $users); 
+    //  # if true => logged, if false => wrong pass, if null => don't exist
 }
 
-if (isset($__POST['password'])) {
-    $_SESSION['password'] = $_POST['password'];
-}
 
 ?>
 
@@ -28,11 +33,15 @@ if (isset($__POST['password'])) {
 
         <button type="submit">Login</button>
     </form>
-
-    <?php
-    if (isset($_SESSION['username'])) {
-        echo "<p>Benvenuto, " . $_SESSION['username'] . "!</p>";
+    
+    <?php if (isset($_POST['username'])) {
+        if ($logged === false)  { 
+            echo '<h3>L\'username esiste, ma la password non &egrave; corretta</h3>';
+        } else if ($logged === null) {
+            echo '<h3>L\'username non esiste</h3>';
+        };
     }
     ?>
+        
 </body>
 </html>

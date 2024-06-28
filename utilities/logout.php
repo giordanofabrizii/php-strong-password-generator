@@ -1,3 +1,11 @@
+<?php 
+
+session_start();
+
+session_unset();
+
+?>
+
 <!DOCTYPE html>
 <html lang="it">
 <head>

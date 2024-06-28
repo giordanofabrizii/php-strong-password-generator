@@ -5,7 +5,6 @@ require_once __DIR__ . '/utilities/db.php';
 session_start();
 var_dump($_SESSION);
 
-
 /**
  * 
  * Dato un array di utenti, ovvero array associativi con username e password in chiaro
@@ -49,11 +48,11 @@ var_dump($_SESSION);
         <h3>Devi andare alla pagina di login</h3>
 
         <?php
-        if (isset($_SESSION['username'])) {
-            echo htmlspecialchars($_SESSION['username']);
-        } else {
-            echo "Non sei loggato.";
-        }
+            if (isset($_SESSION['username'])) {
+                echo ($_SESSION['username']);
+            } else {
+                echo "Non sei loggato.";
+            }
         ?>
     </main>
 </body>
