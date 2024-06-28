@@ -63,16 +63,16 @@ session_start();
                     <img src="https://emoji.slack-edge.com/T91QPE3BP/rick-tamarro/401d02cc2c4ce103.gif" alt="Riccardo swag">
                 </article>
                 <article>
-                    <img src="https://emoji.slack-edge.com/T91QPE3BP/rick-tamarro/401d02cc2c4ce103.gif" alt="Riccardo swag">
+                    <img src="https://emoji.slack-edge.com/T91QPE3BP/rick_chill/4cbe8259af927f83.png" alt="Riccardo swag">
                 </article>
                 <article>
-                    <img src="https://emoji.slack-edge.com/T91QPE3BP/rick-tamarro/401d02cc2c4ce103.gif" alt="Riccardo swag">
+                    <img src="https://emoji.slack-edge.com/T91QPE3BP/rick_lol/4a71f809a2e2355f.png" alt="Riccardo swag">
                 </article>
                 <article>
-                    <img src="https://emoji.slack-edge.com/T91QPE3BP/rick-tamarro/401d02cc2c4ce103.gif" alt="Riccardo swag">
+                    <img src="https://emoji.slack-edge.com/T91QPE3BP/rick/20d47f864785a3be.png" alt="Riccardo swag">
                 </article>
                 <article>
-                    <img src="https://emoji.slack-edge.com/T91QPE3BP/rick-tamarro/401d02cc2c4ce103.gif" alt="Riccardo swag">
+                    <img src="https://emoji.slack-edge.com/T91QPE3BP/pigiama_rick/d9c8ae806d94070a.jpg" alt="Riccardo swag">
                 </article>
 
             </section>
