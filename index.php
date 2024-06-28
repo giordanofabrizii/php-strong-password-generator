@@ -2,6 +2,10 @@
 
 require_once __DIR__ . '/utilities/db.php';
 
+session_start();
+var_dump($_SESSION);
+
+
 /**
  * 
  * Dato un array di utenti, ovvero array associativi con username e password in chiaro
@@ -16,8 +20,7 @@ require_once __DIR__ . '/utilities/db.php';
  * Impedire la visualizzazione dei contenuti di index.php (anche semplici di prova) fino a quanto l'utente non sia loggato.
  * Bonus 2:
  * Prevedere l'uso di qualsiasi controllo attraverso una funzione inserita in un file separato in 'src/functions.php/'
- */
-
+*/
 
 ?>
 
@@ -36,13 +39,22 @@ require_once __DIR__ . '/utilities/db.php';
                     <a href="./utilities/login.php">Login</a>
                 </li>
                 <li>
-                    <a href="./utilities/logout.php">Login</a>
+                    <a href="./utilities/logout.php">Logout</a>
                 </li>
             </ul>
         </nav>
     </header>
     <main>
         <h1>Fai pure l'accesso</h1>
+        <h3>Devi andare alla pagina di login</h3>
+
+        <?php
+        if (isset($_SESSION['username'])) {
+            echo htmlspecialchars($_SESSION['username']);
+        } else {
+            echo "Non sei loggato.";
+        }
+        ?>
     </main>
 </body>
 </html>
